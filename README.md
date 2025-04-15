@@ -16,16 +16,16 @@ Ces données sont ensuite **affichées sur un site web**, accompagnées de la **
 
 ## ⚙️ Matériel utilisé
 
--  **Capteur** : EM111
--  **Ordinateur** : Poste de développement
--  **Câblage** : ModBus RS485 via USB
-
+-  **Capteur** : EM111,
+-  **Ordinateur** : Poste de développement,
+-  **Câblage** : ModBus RS485 via USB,
+-  **Multiprise** : Simule une installation électrique.
 ---
 
 ## 🛠️ Outils & Langages
 
--  **Langage** : Java  
--  **IDE** : IntelliJ IDEA  
+-  **Langage** : Java,  
+-  **IDE** : IntelliJ IDEA.
 
 ---
 ---
