@@ -16,10 +16,9 @@ L’objectif principal est de pouvoir **interroger le capteur** pour récupérer
 
 ## ⚙️ Matériel utilisé
 
-- 🧭 **Capteur** : Enerdis (ex: COUNTIS E44)
-- 🔌 **Interface série** : Convertisseur USB ↔ RS485
+- 🧭 **Capteur** : EM111
 - 🖥️ **Ordinateur** : Poste de développement
-- 🔧 **Câblage** : Bus RS485 (connexion A/B correcte)
+- 🔧 **Câblage** : ModBus RS485 via USB
 
 ---
 
