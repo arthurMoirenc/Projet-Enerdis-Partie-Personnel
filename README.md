@@ -13,6 +13,7 @@ Ce projet a pour but de mettre en place une communication série avec un **capte
 L’objectif principal est de pouvoir **interroger le capteur** pour récupérer des données (tension, intensité, puissance, etc.), les **décoder** et les **afficher sur un site web**.
 
 ---
+---
 
 ## ⚙️ Matériel utilisé
 
@@ -25,27 +26,73 @@ L’objectif principal est de pouvoir **interroger le capteur** pour récupérer
 ## 🛠️ Outils & Langages
 
 - 💻 **Langage** : Java  
-- 🧠 **IDE** : IntelliJ IDEA / VSCode  
-- 📚 **Librairies** :
-  - `javax.comm` ou `jSerialComm` pour la communication série
-  - Classes personnalisées pour le calcul CRC, l’encodage/décodage des trames
+- 🧠 **IDE** : IntelliJ IDEA  
 
+---
 ---
 
 ## 📦 Structure du code
 
-### `LiaisonSerie.java`
-➡ Gère l’ouverture/configuration du port série, envoie et réception des trames.
+## `ModBus.java`
+➡ Classe principale qui hérite de `LiaisonSerie` et centralise la **logique métier** :
+- Initialise la communication avec le port série
+- Envoie les trames formatées automatiquement
+- Attend et lit la réponse
+- Vérifie et décode la trame reçue
+- Affiche la valeur mesurée dans la console
 
-### `CRC16.java`
+#### Fonctions utiles :
+- `connecterEsclave(...)` : établit la connexion série avec les bons paramètres
+- `lectureTension()` / `lectureIntensite()` / `lecturePuissance()` / `lectureFrequence()` : envoie une trame prédéfinie pour chaque type de mesure
+- `lectureCoils()` : lecture libre via saisie manuelle d’une trame
+- `decoderReponse()` : extrait les octets utiles et retourne la valeur en float
+- `serialEvent()` : gère les événements de réception sur le port série
+
+---
+
+## `LiaisonSerie.java`
+➡ Classe de base qui encapsule toutes les opérations liées à la **communication série via RS485**.  
+Elle utilise la bibliothèque `jSSC` pour gérer les ports série.
+
+#### Fonctionnalités :
+-  `listerLesPorts()` : récupère la liste des ports série disponibles sur la machine
+-  `initCom(...)` : initialise un port série donné
+-  `configurerParametres(...)` : configure les paramètres de la liaison (baudrate, bits de données, parité, stop)
+-  `ecrire(byte[])` : envoie une trame (tableau de bytes) sur le port
+-  `lire()` / `lireTrame(int)` : lit un octet ou une trame complète depuis le buffer de réception
+-  `detecteSiReception()` : vérifie si des données ont été reçues
+-  `fermerPort()` : ferme proprement la communication
+
+---
+
+### `Main.java`
+➡ Point d’entrée du programme. Cette classe permet de lancer la communication avec le capteur via la console.
+
+#### Fonctionnement :
+1. Demande à l’utilisateur :
+   - Le numéro de l’esclave (adresse Modbus)
+   - Le port COM à utiliser (ex : COM3, ttyUSB0…)
+
+2. 🔧 Initialise la liaison série avec les paramètres standards (9600 bauds, 8 bits, parité nulle, 1 bit de stop)
+
+3. Lance une boucle infinie qui :
+   - Envoie une trame pour lire la **fréquence (Hz)**
+   - Envoie une trame pour lire la **tension (V)**
+   - Envoie une trame pour lire la **puissance (kW)**
+   - Envoie une trame pour lire l’**intensité (A)**
+   - Attend **60 secondes** avant de recommencer (intervalle de mesure)
+  
+---
+
+## `CRC16.java`
 ➡ Calcule le **checksum CRC16** pour garantir l’intégrité des trames Modbus.
 
-### `BigEndian.java`
+## `BigEndian.java`
 ➡ Convertit les **octets Big Endian** en types exploitables (`int`, `float`, etc.).
 
-### `In.java`
-➡ Génère et envoie une **trame d’interrogation Modbus**, puis lit la réponse.
 
+
+---
 ---
 
 ## 🔁 Exemple de Trame
