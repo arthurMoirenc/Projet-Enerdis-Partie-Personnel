@@ -52,4 +52,5 @@ L’objectif principal est de pouvoir **interroger le capteur** pour récupérer
 ## 🔁 Exemple de Trame
 
 [01] [03] [00] [00] [00] [01] [84] [0A]   <-- Trame envoyée
+
 [01] [03] [02] [09] [10] [BF] [D8]  <-- Réponse du capteur
