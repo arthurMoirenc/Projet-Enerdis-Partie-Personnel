@@ -4,8 +4,6 @@
 ![Java](https://img.shields.io/badge/Java-%23181717.svg?style=for-the-badge&logo=java&logoColor=white)
 ![Modbus RTU](https://img.shields.io/badge/Modbus%20RTU-Protocol-blue?style=for-the-badge)
 ![RS485](https://img.shields.io/badge/RS485-Serial-green?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-En%20cours-yellow?style=for-the-badge)
-
 
 ## 🎯 Objectif
 
