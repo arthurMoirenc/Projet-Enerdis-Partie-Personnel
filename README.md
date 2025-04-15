@@ -65,7 +65,7 @@ Elle utilise la bibliothèque `jSSC` pour gérer les ports série.
 
 ---
 
-### `Main.java`
+## `Main.java`
 ➡ Point d’entrée du programme. Cette classe permet de lancer la communication avec le capteur via la console.
 
 #### Fonctionnement :
