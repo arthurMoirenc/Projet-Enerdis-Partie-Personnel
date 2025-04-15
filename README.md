@@ -67,13 +67,13 @@ Elle utilise la bibliothèque `jSSC` pour gérer les ports série.
 ➡ Point d’entrée du programme. Cette classe permet de lancer la communication avec le capteur via la console.
 
 #### Fonctionnement :
-1. Demande à l’utilisateur :
+➡ Demande à l’utilisateur :
    - Le numéro de l’esclave (adresse Modbus)
    - Le port COM à utiliser (ex : COM3, ttyUSB0…)
 
-2. 🔧 Initialise la liaison série avec les paramètres standards (9600 bauds, 8 bits, parité nulle, 1 bit de stop)
+➡ 🔧 Initialise la liaison série avec les paramètres standards (9600 bauds, 8 bits, parité nulle, 1 bit de stop)
 
-3. Lance une boucle infinie qui :
+➡ Lance une boucle infinie qui :
    - Envoie une trame pour lire la **fréquence (Hz)**
    - Envoie une trame pour lire la **tension (V)**
    - Envoie une trame pour lire la **puissance (kW)**
