@@ -15,16 +15,16 @@ L’objectif principal est de pouvoir **interroger le capteur** pour récupérer
 
 ## ⚙️ Matériel utilisé
 
-- 🧭 **Capteur** : EM111
-- 🖥️ **Ordinateur** : Poste de développement
-- 🔧 **Câblage** : ModBus RS485 via USB
+-  **Capteur** : EM111
+-  **Ordinateur** : Poste de développement
+-  **Câblage** : ModBus RS485 via USB
 
 ---
 
 ## 🛠️ Outils & Langages
 
-- 💻 **Langage** : Java  
-- 🧠 **IDE** : IntelliJ IDEA  
+-  **Langage** : Java  
+-  **IDE** : IntelliJ IDEA  
 
 ---
 ---
