@@ -10,7 +10,7 @@
 ## 🎯 Objectif
 
 Ce projet a pour but de mettre en place une communication série avec un **capteur Enerdis** via le protocole **Modbus RTU** sur une liaison **RS485**.  
-L’objectif principal est de pouvoir **interroger le capteur** pour récupérer des données (tension, intensité, puissance, etc.), les **décoder** et les **afficher dans un site web**.
+L’objectif principal est de pouvoir **interroger le capteur** pour récupérer des données (tension, intensité, puissance, etc.), les **décoder** et les **afficher sur un site web**.
 
 ---
 
