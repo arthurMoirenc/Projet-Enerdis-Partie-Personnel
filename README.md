@@ -1,4 +1,5 @@
-# 🔌 Projet Enerdis – Communication Modbus RTU via RS485
+<h1 align="center">🔌 Projet Enerdis – Communication Modbus RTU via RS485 /h1>
+
 
 ![Java](https://img.shields.io/badge/Java-%23181717.svg?style=for-the-badge&logo=java&logoColor=white)
 ![Modbus RTU](https://img.shields.io/badge/Modbus%20RTU-Protocol-blue?style=for-the-badge)
