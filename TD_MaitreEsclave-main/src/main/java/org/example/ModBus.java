@@ -215,13 +215,4 @@ public class ModBus extends LiaisonSerie {
         return lectureValeur("01030002000125CA");
     }
 
-
-/*    public float lectureIntensite() throws InterruptedException {
-        System.out.println("Ecriture de la trame pour recevoir l'INTENSITE");
-        float valeur = lectureValeur("01030002000125CA");
-        valeur /= 1000;
-        System.out.println("Valeur décodée : " + valeur + " Ampère");
-        return valeur;
-    }*/
-
 }
